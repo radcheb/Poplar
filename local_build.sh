@@ -30,6 +30,12 @@ docker pull redis
 docker pull zookeeper
 docker images
 
+# clean old containers
+docker stop poplar-mysql poplar-redis
+docker rm poplar-mysql poplar-redis
+
+docker stop poplar-user-service poplar-feed-service poplar-action-service poplar-tag-service poplar-api
+docker rm poplar-user-service poplar-feed-service poplar-action-service poplar-tag-service poplar-api
 
 echo '[INFO] creating docker network...'
 docker network create --subnet=172.19.0.0/16 poplar-network
