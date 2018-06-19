@@ -49,12 +49,12 @@ class LoginPage extends Component {
 
   checkInfo() {
     if(this.state.email == '' || trim(this.state.email).length == 0) {
-      Alert.alert('请输入邮箱');
+      Alert.alert('please input your email');
       return false;
     }
 
     if(this.state.password == '' || trim(this.state.password).length == 0) {
-      Alert.alert('请输入密码');
+      Alert.alert('Please enter your password');
       return false;
     }
     return true;
@@ -89,15 +89,15 @@ class LoginPage extends Component {
           //this.props.showLoginPage(false);
         } else {
           if(retCode == PoplarEnv.dic.ERROR_EMAIL_EMPTY) {
-            Alert.alert('请输入邮箱');
+            Alert.alert('please input your email');
           } else if(retCode == PoplarEnv.dic.ERROR_EMAIL_NOT_REG) {
-            Alert.alert('您还没有注册哦');
+            Alert.alert('You have not registered yet');
           } else if(retCode == PoplarEnv.dic.ERROR_PWD_EMPTY) {
-            Alert.alert('请输入密码');
+            Alert.alert('Please enter your password');
           } else if(retCode == PoplarEnv.dic.ERROR_PWD_DIFF) {
-            Alert.alert('密码错误');
+            Alert.alert('wrong password');
           } else {
-            Alert.alert('登录异常, 请重试');
+            Alert.alert('Login exception, please try again');
           }
           this.setState({inTheLog: false});
         }
@@ -171,7 +171,7 @@ class LoginPage extends Component {
                                     borderWidth: 0.2,
                                     borderRadius: 2,
                                     color: '#9B9B9B'}}
-                            placeholder="邮箱"
+                            placeholder="email"
                             editable={this.state.inTheLog ? false: true}
                             onChangeText={(email) => this.setState({email})}
                             defaultValue='lvwangbeta1@163.com'
@@ -185,7 +185,7 @@ class LoginPage extends Component {
                                     marginTop: 10,
                                     borderRadius: 2,
                                     color: '#9B9B9B'}}
-                            placeholder="密码"
+                            placeholder="password"
                             secureTextEntry={true}
                             editable={this.state.inTheLog ? false: true}
                             onChangeText={(password) => this.setState({password})}
@@ -195,24 +195,24 @@ class LoginPage extends Component {
                     {
                       this.state.inTheLog ?
                       <View style={[styles.loginBtn, {backgroundColor: '#59A2F7'}]}>
-                        <Text style={{color: 'white', fontSize: 16, marginTop: 6}}>登录中</Text>
+                        <Text style={{color: 'white', fontSize: 16, marginTop: 6}}>Login in</Text>
                       </View> :
                       <TouchableOpacity onPress={()=>this.login()} style={styles.loginBtn}>
-                        <Text style={{color: 'white', fontSize: 16, marginTop: 6}}>登录</Text>
+                        <Text style={{color: 'white', fontSize: 16, marginTop: 6}}>Login</Text>
                       </TouchableOpacity>
                     }
 
                   </View>
                 </View>
                 {/* end inputs */}
-                <View style={{marginTop:40}}><Text style={{color:'#9B9B9B'}}>——————————     或     ——————————</Text></View>
+                <View style={{marginTop:40}}><Text style={{color:'#9B9B9B'}}>——————————     or     ——————————</Text></View>
                 <View style={{marginTop: 30, height: 30,flexDirection:'row'}}>
                   <Image style={{width: 30, height: 30,marginLeft:-14}} source={require('./imgs/weibo.png')}/>
-                  <Text style={{width: 90, height: 30, marginTop:7,color:'#9B9B9B'}}>使用微博登录</Text>
+                  <Text style={{width: 90, height: 30, marginTop:7,color:'#9B9B9B'}}>Use Weibo to login</Text>
                 </View>
                 <View style={{position:'absolute', bottom:20, flexDirection:'row'}}>
-                  <Text style={{color:'#9B9B9B'}}>还没有账号?</Text>
-                  <Text style={{color:'#4A90E2',}} onPress={()=>showRegPage(true)}> 注册</Text>
+                  <Text style={{color:'#9B9B9B'}}>No account yet ?</Text>
+                  <Text style={{color:'#4A90E2',}} onPress={()=>showRegPage(true)}> registered </Text>
                 </View>
               </View>
 
