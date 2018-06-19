@@ -39,15 +39,15 @@ export default class SettingsPage extends Component{
       <View style={styles.container}>
         <NavigationBar
         style={{borderBottomWidth: 0.5, borderBottomColor: '#F3F3F3'}}
-        title={{title: '设置'}}
+        title={{title: 'Settings'}}
         leftButton={<BackBtn onPress={()=>this.props.navigation.goBack()}/>}
         />
         <TouchableOpacity style={styles.cell} onPress={()=>this.nav2AboutPage()}>
-          <Text style={{fontSize: 16}}>关于</Text>
+          <Text style={{fontSize: 16}}>on</Text>
         </TouchableOpacity>
         <View style={{alignItems: 'center',}}>
             <TouchableOpacity style={styles.logoutBtn} onPress={()=>this.props.navigation.goBack()}>
-              <Text style={{color: 'red', fontSize: 16,}}>退出登录</Text>
+              <Text style={{color: 'red', fontSize: 16,}}>sign out</Text>
             </TouchableOpacity>
         </View>
       </View>
