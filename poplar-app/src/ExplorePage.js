@@ -41,7 +41,7 @@ export default class ExplorePage extends Component {
       <View style={styles.container}>
         <NavigationBar
         style={{borderBottomWidth: 0.5, borderBottomColor: '#F3F3F3'}}
-        title={{title: '探索'}}/>
+        title={{title: 'explore'}}/>
         <ExploreContainer {...this.props}/>
       </View>
     );
