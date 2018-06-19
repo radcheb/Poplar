@@ -1,4 +1,4 @@
-const APP_SERVER_HOST = 'http://192.168.1.9:8080';
+const APP_SERVER_HOST = ' http://172.20.10.2:8080';
 const API_BASE = APP_SERVER_HOST + '/api';
 const API_VERSION = '/v1';
 const API_HOST = API_BASE + API_VERSION;

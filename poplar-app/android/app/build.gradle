@@ -95,7 +95,7 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.poplar"
@@ -132,6 +132,15 @@ android {
                 output.versionCodeOverride =
                         versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
             }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        // Wrong! You should not put two URL entries within the same `maven {}` entry.
+        maven {
+            url "https://jitpack.io"
         }
     }
 }
