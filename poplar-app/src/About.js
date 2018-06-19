@@ -19,7 +19,7 @@ export default class About extends Component{
       <View style={{flex:1,backgroundColor: 'white',}}>
         <NavigationBar
         style={{borderBottomWidth: 0.5, borderBottomColor: '#F3F3F3'}}
-        title={{title: 'About'}}
+        title={{title: '关于'}}
         leftButton={<BackBtn onPress={()=>this.props.navigation.goBack()}/>}
         />
         <View>
@@ -33,7 +33,7 @@ export default class About extends Component{
             <Text style={{fontSize: 14, color:'#9B9B9B'}}>©2017-2018 lvwangbeta. All rights reserved.</Text>
           </View>
           <View style={{alignItems: 'flex-start', marginTop: 40, marginLeft: 60,}}>
-            <Text style={{fontSize: 16, color:'#9B9B9B', marginBottom: 5}}>开源组件</Text>
+            <Text style={{fontSize: 16, color:'#9B9B9B', marginBottom: 5}}>Open source components</Text>
             <Text style={{fontSize: 16, color:'#9B9B9B'}}>react</Text>
             <Text style={{fontSize: 16, color:'#9B9B9B'}}>react-native</Text>
             <Text style={{fontSize: 16, color:'#9B9B9B'}}>react-navigation</Text>
