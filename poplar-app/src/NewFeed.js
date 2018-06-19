@@ -234,12 +234,12 @@ class NewFeed extends Component {
           visible={newFeedPageVisible}>
             <View style={styles.nav}>
               <View style={styles.cancleBtn}>
-                <Text onPress={()=>this.cancle()}>取消</Text>
+                <Text onPress={()=>this.cancle()}>cancel</Text>
               </View>
-              <View style={styles.title}><Text style={{textAlign: 'center', fontWeight: 'bold'}}>发状态</Text></View>
+              <View style={styles.title}><Text style={{textAlign: 'center', fontWeight: 'bold'}}>State of hair</Text></View>
               <View style={styles.sendBtn}>
                 <TouchableOpacity onPress={()=>this.send()}>
-                  <Text style={{textAlign: 'right', color: '#00B5AD'}}>发送</Text>
+                  <Text style={{textAlign: 'right', color: '#00B5AD'}}>send</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -249,7 +249,7 @@ class NewFeed extends Component {
                 <View>
                   <TextInput
                     style={styles.multiline}
-                    placeholder="说点什么吧..."
+                    placeholder="say something..."
                     returnKeyType="next"
                     autoFocus={true}
                     multiline={true}
@@ -271,7 +271,7 @@ class NewFeed extends Component {
                   <Text style={styles.tagIcon}>#</Text>
                   <TextInput
                     style={styles.tagInput}
-                    placeholder="添加标签"
+                    placeholder="add tag"
                     returnKeyType="done"
                     autoFocus={false}
                     multiline={false}
