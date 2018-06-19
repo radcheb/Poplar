@@ -19,7 +19,7 @@ export default class About extends Component{
       <View style={{flex:1,backgroundColor: 'white',}}>
         <NavigationBar
         style={{borderBottomWidth: 0.5, borderBottomColor: '#F3F3F3'}}
-        title={{title: '关于'}}
+        title={{title: 'About'}}
         leftButton={<BackBtn onPress={()=>this.props.navigation.goBack()}/>}
         />
         <View>
