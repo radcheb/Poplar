@@ -86,31 +86,31 @@ class RegisterPage extends Component{
   checkInfo() {
 
     if(this.state.email == '' || trim(this.state.email).length == 0){
-      Alert.alert('请输入邮箱');
+      Alert.alert('please input your email');
       return;
     }
 
     if(!validateEmail(this.state.email)) {
-      Alert.alert('请输入正确的邮箱格式');
+      Alert.alert('Please enter the correct email format');
       return;
     }
 
     if(this.state.password.length < PWD_MIN_LEN) {
-      Alert.alert('密码至少8位哦~');
+      Alert.alert('Password at least 8');
       return;
     }
     if(this.state.password.length > PWD_MAX_LEN) {
-      Alert.alert('密码最多16位哦~');
+      Alert.alert('Password up to 16');
       return;
     }
 
     if(this.state.cfmPassword.length == 0) {
-      Alert.alert('请输入确认密码');
+      Alert.alert('Please enter the confirmation password');
       return;
     }
 
     if(this.state.cfmPassword != this.state.password) {
-      Alert.alert('两次密码输入不一致');
+      Alert.alert('Inconsistent password input twice');
       return;
     }
     this.isEmailExist((result) => {
@@ -119,7 +119,7 @@ class RegisterPage extends Component{
           next: true,
         });
       } else {
-        Alert.alert('此账户已注册');
+        Alert.alert('This account is registered');
         return;
       }
     });
@@ -127,12 +127,12 @@ class RegisterPage extends Component{
 
   register() {
     if(this.state.userName.length == 0) {
-      Alert.alert('请输入昵称');
+      Alert.alert('Please enter a nickname');
       return;
     }
 
     if(this.state.userName.length > NAME_MAX_LEN) {
-      Alert.alert('做多只能'+NAME_MAX_LEN+'个字符');
+      Alert.alert('Can only do more'+NAME_MAX_LEN+'Characters');
       return;
     }
 
@@ -236,7 +236,7 @@ class RegisterPage extends Component{
                                       borderWidth: 0.2,
                                       borderRadius: 3,
                                       color: '#9B9B9B'}}
-                              placeholder="邮箱"
+                              placeholder="mailbox"
                               returnKeyType="next"
                               editable={this.state.inTheReg ? false: true}
                               onChangeText={(email) => this.setState({email})}
@@ -250,7 +250,7 @@ class RegisterPage extends Component{
                                       marginTop: 10,
                                       borderRadius: 3,
                                       color: '#9B9B9B'}}
-                              placeholder="密码(8~16位)"
+                              placeholder="Password (8~16 digits)"
                               returnKeyType="next"
                               secureTextEntry={true}
                               editable={this.state.inTheReg ? false: true}
@@ -265,7 +265,7 @@ class RegisterPage extends Component{
                                       marginTop: 10,
                                       borderRadius: 3,
                                       color: '#9B9B9B'}}
-                              placeholder="确认密码"
+                              placeholder="confirm password"
                               returnKeyType="done"
                               secureTextEntry={true}
                               editable={this.state.inTheReg ? false: true}
@@ -284,7 +284,7 @@ class RegisterPage extends Component{
                                       marginTop: 10,
                                       borderRadius: 3,
                                       color: '#9B9B9B'}}
-                              placeholder="取个昵称吧(20字符以内)"
+                              placeholder="Take a nickname (within 20 characters)"
                               returnKeyType="done"
                               editable={this.state.inTheReg ? false: true}
                               onChangeText={(userName) => this.setState({userName})}
@@ -295,10 +295,10 @@ class RegisterPage extends Component{
                     {
                       this.state.inTheReg ?
                       <View style={[styles.regBtn, {backgroundColor: '#59A2F7'}]}>
-                        <Text style={{color: 'white', fontSize: 16, marginTop: 6}}>注册中</Text>
+                        <Text style={{color: 'white', fontSize: 16, marginTop: 6}}>Registration</Text>
                       </View> :
                       <TouchableOpacity onPress={this.state.next ? ()=>this.register(): ()=>this.checkInfo()} style={styles.regBtn}>
-                        <Text style={{color: 'white', fontSize: 16, marginTop: 6}}>{this.state.next ? '完成': '下一步'}</Text>
+                        <Text style={{color: 'white', fontSize: 16, marginTop: 6}}>{this.state.next ? 'carry out': 'The next step'}</Text>
                       </TouchableOpacity>
                     }
 
